@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+#wrap{
+    width: 100vv;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap ul{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+    
+}
+#wrap  li{
+    width: 16%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #333;
+    transition: width .5s linear,height .5s linear .5s;
+}
+#wrap ul li .inner{
+    position: relative;
+    width: 100%;
+    height:100%;
+    transition: all .5s linear;
+}
+#wrap .init li .inner{
+    transform: translateY(100%);
+}
+#wrap ul li:nth-child(1) .inner{
+    transition-delay: .1s;
+}
+#wrap ul li:nth-child(2) .inner{
+    transition-delay: .2s;
+}
+#wrap ul li:nth-child(3) .inner{
+    transition-delay: .3s;
+}
+#wrap ul li:nth-child(4) .inner{
+    transition-delay: .4s;
+}
+#wrap ul li:nth-child(5) .inner{
+    transition-delay: .5s;
+}
+#wrap ul li:nth-child(6) .inner{
+    transition-delay: .6s;
+}
+.content{
+    height: 100%;
+}
+#wrap li .inner .bg{
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: .2s linear;
+}
+#wrap li:nth-of-type(1) .bg{
+    background-image: url(./images/1.jpg);
+}
+#wrap li:nth-of-type(2) .bg{
+    background-image: url(./images/2.jpg);
+}
+#wrap li:nth-of-type(3) .bg{
+    background-image: url(./images/3.jpg);
+}
+#wrap li:nth-of-type(4) .bg{
+    background-image: url(./images/4.jpg);
+}
+#wrap li:nth-of-type(5) .bg{
+    background-image: url(./images/5.jpg);
+}
+#wrap li:nth-of-type(6) .bg{
+    background-image: url(./images/6.jpg);
+}
+#wrap  h2{
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#wrap li .inner:hover .bg{
+    opacity: 1;
+}
+#wrap .inner:hover h2{
+    font-size: 24px;
+}
+#activeWrap li h2{
+    opacity: 0;
+    transition: .2s linear;
+}
+#activeWrap li:not(.active){
+    width: 0;
+    height: 0;
+}
+#activeWrap li.active {
+    width: 100%;
+}
+#activeWrap li{
+    transition: height .5s linear,width .5s linear .5s;
+}
+#wrap .direction{
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    padding: 0 30px;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    opacity: 0;
+}
+#wrap .direction .text{
+    font-size: 30px;
+    color: #fff;
+}
+#wrap .cloase::before,.cloase::after{
+    content: "";
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    margin-top: -2px;
+    background-color: #fff;
+    cursor: pointer;
+}
+#wrap .cloase::before{
+    transform: rotate(45deg)
+}
+#wrap .cloase::after{
+    transform: rotate(-45deg)
+}
+#activeWrap li.active .direction {
+    opacity: 1;
+    transition: .5s linear .1s;
+}
+#activeWrap li.active .direction .cloase{
+    transform:rotate(360deg);
+    transition: .5s linear .1s;
+}
